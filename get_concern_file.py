@@ -4,7 +4,8 @@ import USER
 
 
 def url_to_json(GITHUB_URL, GITHUB_TOKEN):
-    return json.load(requests.get(GITHUB_URL, auth=('', GITHUB_TOKEN)))
+    response = requests.get(GITHUB_URL, auth=('', GITHUB_TOKEN))
+    return json.loads(response.text)
 
 
 def get_pull_numbers(GITHUB_URL, GITHUB_TOKEN, state="all"):

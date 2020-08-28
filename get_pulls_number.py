@@ -1,5 +1,11 @@
 import requests
 import json
+import USER
+
+
+def url_to_json(GITHUB_URL, GITHUB_TOKEN):
+    response = requests.get(GITHUB_URL, auth=('', GITHUB_TOKEN))
+    return json.load(response.test)
 
 
 def get_pull_numbers(GITHUB_URL, GITHUB_TOKEN, state="all"):
@@ -45,8 +51,8 @@ def concerened_files(GITHUB_URL, GITHUB_TOKEN, concerened_file=None):
 
 
 if __name__ == "__main__":
-    GITHUB_TOKEN = '133aa0492317ea650c89a4ba9dcd135fc393e46e'
-    GITHUB_URL = "https://api.github.com/repos/oky-123/soc_information_api/"
+    GITHUB_TOKEN = USER.GITHUB_TOKEN
+    GITHUB_URL = USER.GITHUB_URL
     res = concerened_files(GITHUB_URL, GITHUB_TOKEN, concerened_file="app/models/student.rb")
     tmp = []
     for k, v in res.items():
