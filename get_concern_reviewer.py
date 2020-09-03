@@ -12,6 +12,9 @@ def get_pull_numbers(GITHUB_URL, GITHUB_TOKEN, state="all"):
     GITHUB_URL += "pulls?state="+state
     response = url_to_json(GITHUB_URL, GITHUB_TOKEN)
     numbers = []
+    if "message" in response:
+        print(response["message"])
+        return []
     for dic in response:
         numbers.append(int(dic["number"]))
     return numbers
@@ -47,4 +50,4 @@ if __name__ == "__main__":
     GITHUB_TOKEN = USER.GITHUB_TOKEN
     GITHUB_URL = USER.GITHUB_URL
     concerened_file = USER.CONCERNED_FILE
-    print(concerened_reviewers(GITHUB_URL, GITHUB_TOKEN, concerened_file=concerened_file))
+    print(concerened_reviewers(GITHUB_URL, GITHUB_TOKEN, concerened_file=None))

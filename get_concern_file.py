@@ -12,6 +12,9 @@ def get_pull_numbers(GITHUB_URL, GITHUB_TOKEN, state="all"):
     GITHUB_URL += "pulls?state="+state
     response = url_to_json(GITHUB_URL, GITHUB_TOKEN)
     numbers = []
+    if "message" in response:
+        print(response["message"])
+        return []
     for dic in response:
         numbers.append(int(dic["number"]))
     return numbers
