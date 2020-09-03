@@ -1,2 +1,4 @@
-GITHUB_TOKEN = '133aa0492317ea650c89a4ba9dcd135fc393e46e'
-GITHUB_URL = "https://api.github.com/repos/oky-123/soc_information_api/"
+GITHUB_TOKEN = '829072bbf97aea131dcf60b334bf89b0784e0d31'
+GITHUB_URL = "https://api.github.com/repos/Lennethe/github_api/"
+CONCERNED_FILE = None
+# CONCERNED_FILE = "app/models/student.rb"
