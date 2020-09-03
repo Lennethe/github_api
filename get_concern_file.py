@@ -51,7 +51,8 @@ def concerened_files(GITHUB_URL, GITHUB_TOKEN, concerened_file=None):
 if __name__ == "__main__":
     GITHUB_TOKEN = USER.GITHUB_TOKEN
     GITHUB_URL = USER.GITHUB_URL
-    res = concerened_files(GITHUB_URL, GITHUB_TOKEN, concerened_file="app/models/student.rb")
+    concerened_file = USER.CONCERNED_FILE
+    res = concerened_files(GITHUB_URL, GITHUB_TOKEN, concerened_file=concerened_file)
     tmp = []
     for k, v in res.items():
         tmp.append([v["changes"], k])

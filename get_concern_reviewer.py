@@ -46,4 +46,5 @@ def concerened_reviewers(GITHUB_URL, GITHUB_TOKEN, concerened_file=None):
 if __name__ == "__main__":
     GITHUB_TOKEN = USER.GITHUB_TOKEN
     GITHUB_URL = USER.GITHUB_URL
-    print(concerened_reviewers(GITHUB_URL, GITHUB_TOKEN))
+    concerened_file = USER.CONCERNED_FILE
+    print(concerened_reviewers(GITHUB_URL, GITHUB_TOKEN, concerened_file=concerened_file))
